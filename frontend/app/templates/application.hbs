@@ -1,0 +1,13 @@
+<h2 id='title'>Welcome To Chores</h2>
+{{#if session.isAuthenticated}}
+  <p>Hi!</p>
+  <a {{action 'invalidateSession'}}>Sign Out</a>
+{{else}}
+  {{link-to 'Sign Up' 'register'}}
+  {{link-to 'Log In' 'login'}}
+{{/if}}
+{{partial 'layouts/flash'}}
+
+<div class='row'>
+  {{outlet}}
+</div>
